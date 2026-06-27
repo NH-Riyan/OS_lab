@@ -1,0 +1,229 @@
+🔹 1. Create compressed archive
+
+tar -czvf documents.tar.gz documents
+
+
+👉 This command packs and compresses the documents folder into one file.
+tar → tool to archive files
+-c → create a new archive
+-z → compress using gzip
+-v → show progress (list files)
+-f → file name follows
+✅ Result: a file named documents.tar.gz
+
+--------------------------------------------------------------------------------------------------------------
+🔹 2. Extract into new directory
+
+mkdir restored_documents
+tar -xzvf documents.tar.gz -C restored_documents
+
+
+👉 This does two things:
+mkdir restored_documents → creates a new folder
+tar -xzvf ... → extracts files into that folder
+-x → extract files
+-z → unzip (gzip)
+-v → show files
+-f → file name
+-C → where to extract
+✅ Result: files go into restored_documents
+--------------------------------------------------------------------------------------------------------------
+
+🔹 3. Rename directory
+
+mv restored_documents backup
+
+👉 This renames the folder
+mv → move or rename
+here it changes name from restored_documents → backup
+--------------------------------------------------------------------------------------------------------------
+
+🔹 4. List contents
+
+ls backup
+
+👉 Shows what is inside the backup folder
+ls → list files
+--------------------------------------------------------------------------------------------------------------
+
+🔹 5. Find all .txt files
+
+find . -name "*.txt"
+
+👉 This searches for all .txt files
+find → search tool
+. → current directory
+-name "*.txt" → files ending with .txt
+--------------------------------------------------------------------------------------------------------------
+
+6. Search for a string in all text files
+
+grep "word" *.txt
+
+👉 Finds a word inside all .txt files
+grep → search text
+"word" → what you are searching
+*.txt → all text files
+--------------------------------------------------------------------------------------------------------------
+
+🔹 7. Count number of lines
+
+wc -l file.txt
+
+👉 Counts how many lines are in the file
+wc → word count tool
+-l → count lines
+--------------------------------------------------------------------------------------------------------------
+
+🔹 8. Sort text alphabetically
+
+sort file.txt
+
+👉 Arranges lines in A → Z order
+sort → sorts lines
+--------------------------------------------------------------------------------------------------------------
+
+🔹 9. Show last 10 lines
+
+tail file.txt
+
+👉 Displays last 10 lines
+tail → shows end of file
+(If you want different number:)
+tail -n 5 file.txt
+--------------------------------------------------------------------------------------------------------------
+
+🔹 10. Find and replace word
+
+sed 's/oldword/newword/g' file.txt
+
+👉 Replaces words (shows output)
+sed → text editor command
+s → substitute
+oldword → word to change
+newword → new word
+g → replace all
+✅ To save changes in file:
+sed -i 's/oldword/newword/g' file.txt
+--------------------------------------------------------------------------------------------------------------
+
+🔹 11. View file continuously (live update)
+
+tail -f file.txt
+
+👉 Shows new lines as they are added
+tail → shows end of file
+-f → follow (keep updating)
+--------------------------------------------------------------------------------------------------------------
+
+🔹 12. Detailed file info
+
+ls -l file.txt
+
+👉 Shows detailed information
+ls → list files
+-l → long format
+Includes:
+permissions
+owner
+size
+date
+--------------------------------------------------------------------------------------------------------------
+
+🔹 13. Check disk space
+
+df -h
+
+👉 Shows free and used disk space
+df → disk free
+-h → human readable (GB, MB)
+--------------------------------------------------------------------------------------------------------------
+
+🔹 14. Monitor network traffic
+
+iftop
+
+👉 Shows real-time internet/network usage
+iftop → like “top” but for network
+⚠️ If not installed:
+sudo apt install iftop
+--------------------------------------------------------------------------------------------------------------
+
+🔹 15. Set environment variable
+
+export NAME="Riyan"
+echo $NAME
+
+👉 Creates a variable
+export → makes it available system-wide
+
+--------------------------------------------------------------------------------------------------------------
+
+🔹 16. Create a symbolic link
+
+ln -s original.txt link.txt
+
+👉 Creates a shortcut (link) to a file
+ln → link command
+-s → symbolic (soft link)
+original.txt → real file
+link.txt → shortcut name
+--------------------------------------------------------------------------------------------------------------
+
+🔹 17. Check service status
+
+systemctl status nginx
+systemctl status MySQL
+systemctl status ssh
+
+👉 Shows if a service is running or not
+systemctl → manage services
+status → check status
+nginx → service name (example)
+systemctl status ssh
+👉 Used for remote access (very common)
+systemctl status mysql
+👉 Used for databases
+--------------------------------------------------------------------------------------------------------------
+
+🔹 18. View compressed file without extracting
+
+zcat file.gz
+or
+zless file.gz
+
+👉 Reads compressed file directly
+zcat → shows all content
+zless → scroll page by page
+--------------------------------------------------------------------------------------------------------------
+
+🔹 19. Search pattern using grep
+
+grep "word" file.txt
+
+👉 Finds a word in a file
+For multiple files:
+grep "word" *.txt
+grep → search tool
+"word" → what to find
+--------------------------------------------------------------------------------------------------------------
+
+🔹 20. Find files modified in last 24 hours
+
+find . -mtime -1 
+
+👉 Finds recently changed files
+find → search files
+-mtime -1 → last 1 day (24 hours)
+--------------------------------------------------------------------------------------------------------------
+
+Command for last 1 hour
+
+find . -mmin -60
+
+🔹 Explanation
+find → search files
+. → current directory
+-mmin → modified time in minutes
+-60 → last 60 minutes (1 hour)
+
